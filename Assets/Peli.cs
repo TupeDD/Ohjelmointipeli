@@ -318,8 +318,10 @@ public class Peli : MonoBehaviour {
 
 	public void plus() {
 		int luku = int.Parse(liiku_maara.GetComponent<Text>().text);
-		luku += 1;
-		liiku_maara.GetComponent<Text> ().text = "" + luku;
+		if (luku < 99) {
+			luku += 1;
+			liiku_maara.GetComponent<Text> ().text = "" + luku;
+		}
 	}
 
 	public void vaihdaSuunta() {
@@ -370,11 +372,11 @@ public class Peli : MonoBehaviour {
 		suorita = false;
 
 		if (mapLoader.mapNum == 1) {
-			Audio.PlayOneShot (vic1, 1f);
+			Audio.PlayOneShot (vic1, 0.7f);
 		} else if (mapLoader.mapNum == 2) {
 			Audio.PlayOneShot (vic2, 0.7f);
 		} else {
-			Audio.PlayOneShot (vic3, 1f);
+			Audio.PlayOneShot (vic3, 0.7f);
 		}
 		winScreen.SetActive (true);
 	}
