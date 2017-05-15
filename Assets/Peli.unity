@@ -1197,6 +1197,87 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
     type: 2}
   m_PrefabInternal: {fileID: 317593041}
+--- !u!82 &128048726
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 128048722}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 2b236008dcbd0c74a9eeee9be298479b,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 77dccbcc9f14d804abca9648eebb36a2, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.321
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &131382603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,7 +2349,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1930953647
+  randomSeed: 94946743
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6316,7 +6397,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 559763516
+  randomSeed: 1007200882
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10786,7 +10867,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 579333031
+  randomSeed: 160523377
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -14103,6 +14184,87 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
     type: 2}
   m_PrefabInternal: {fileID: 1967279235}
+--- !u!82 &569787592
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 569787588}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 2b236008dcbd0c74a9eeee9be298479b,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 77dccbcc9f14d804abca9648eebb36a2, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0.321
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &572928759
 Prefab:
   m_ObjectHideFlags: 0
@@ -19008,7 +19170,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_Volume
-      value: 0.4
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_Center.y
@@ -20109,7 +20271,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 1527423081
+  randomSeed: 1146481228
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -23926,7 +24088,6 @@ MonoBehaviour:
   waiting: 0
   suuntaNumero: 0
   die: 0
-  die_z: 0
   dirLight: {fileID: 127835594}
   Coin: {fileID: 74336930}
   canvasCoins: {fileID: 1059257990}
@@ -23936,6 +24097,7 @@ MonoBehaviour:
   vic1: {fileID: 8300000, guid: 2549120bc25e98949965b9d3cb8230fb, type: 3}
   vic2: {fileID: 8300000, guid: 0077540f6f1072c4d8664788c65ea80c, type: 3}
   vic3: {fileID: 8300000, guid: e6ff5afe13b05c54090f671fc7f8c662, type: 3}
+  lose: {fileID: 8300000, guid: 076054ae798f16842991864ef3af9dda, type: 3}
   can1: {fileID: 1343204443}
   can2: {fileID: 358243063}
   can3: {fileID: 933425302}
@@ -24311,7 +24473,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: -1301931947
+  randomSeed: -1809656058
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -27612,7 +27774,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 687341467
+  randomSeed: -618191903
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -30908,7 +31070,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1566911859
+  randomSeed: 2144228665
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -41539,7 +41701,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 359502629
+  randomSeed: 1010790540
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -44368,7 +44530,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 8dc97b23fb660e74ba018de54d81d33a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -44430,7 +44592,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 1
+      value: 0.515
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -46765,7 +46927,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2014131770
+  randomSeed: -1465499489
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -49594,7 +49756,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 8dc97b23fb660e74ba018de54d81d33a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -49656,7 +49818,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 1
+      value: 0.515
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -50235,7 +50397,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 1
+      value: 0.321
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -50383,7 +50545,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -524630143
+  randomSeed: -196250613
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -55106,7 +55268,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 821038334
+  randomSeed: -284868389
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -58510,7 +58672,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1130511758
+  randomSeed: 138304157
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -61339,7 +61501,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 8dc97b23fb660e74ba018de54d81d33a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -61401,7 +61563,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 1
+      value: 0.515
       inSlope: 0
       outSlope: 0
       tangentMode: 0

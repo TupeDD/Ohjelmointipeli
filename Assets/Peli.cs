@@ -48,6 +48,7 @@ public class Peli : MonoBehaviour {
 	public float temp_rot = 0;
 	private Vector3 originalPosition;
 	private Quaternion originalRotation;
+	private Quaternion orgCam;
 
 	public static List<string> TOIMINTA;
 	public static List<string> TOIMINTA2;
@@ -56,7 +57,6 @@ public class Peli : MonoBehaviour {
 	public int suuntaNumero = 0;
 	public static bool suorita = false;
 	public bool die = false;
-	public int die_z;
 
 	public GameObject dirLight;
 	public GameObject Coin;
@@ -74,6 +74,7 @@ public class Peli : MonoBehaviour {
 	public AudioClip vic1;
 	public AudioClip vic2;
 	public AudioClip vic3;
+	public AudioClip lose;
 	AudioSource Audio;
 
 	// Tykit Terrain3
@@ -94,6 +95,7 @@ public class Peli : MonoBehaviour {
 		TOIMINTA2 = new List<string> ();
 		originalPosition = new Vector3 (4f, 2f, 3.5f);
 		originalRotation = pelaaja.transform.rotation;
+		orgCam = pelaaja.GetComponentInChildren<Camera> ().transform.rotation;
 		freezeOn = GetComponentInChildren<FrostEffect> ().enabled;
 		coins = 0;
 		string info = "";
@@ -224,8 +226,8 @@ public class Peli : MonoBehaviour {
 							TOIMINTA2.Clear ();
 						}
 					} else {
-						temp_rot -= 0.5f;
-						pelaaja.transform.Rotate (0, 0.5f, 0);
+						temp_rot -= 0.25f;
+						pelaaja.transform.Rotate (0, 0.25f, 0);
 					}
 				}
 			}
@@ -234,30 +236,22 @@ public class Peli : MonoBehaviour {
 			}
 		}
 		if (die) {
-			if (die_z > 0) {
-				if (pelaaja.transform.localEulerAngles.z >= die_z) {
-					die = false;
-					deathScreen.gameObject.SetActive (true);
-				} 
-				else {
-					print (pelaaja.transform.localEulerAngles.z);
-					pelaaja.transform.Rotate (0, 0, 0.5f);
-				} 
+			double c = -90.0 / -0.05;
+			double cc = 0.0;
+			if (cc == c) {
+				die = false;
 			} 
 			else {
-				if (pelaaja.transform.localEulerAngles.z <= die_z) {
-					die = false;
-					deathScreen.gameObject.SetActive (true);
-				} 
-				else {
-					print (pelaaja.transform.localEulerAngles.z);
-					pelaaja.transform.Rotate (0, 0, -0.5f);
-				} 
-			}
+				cc++;
+				pelaaja.GetComponentInChildren<Camera> ().transform.Rotate (0, 0, -0.025f);
+			} 
 		}
 	}
 
 	public void kameranVaihto() {
+		if (infoScreen.activeSelf) {
+			infoScreen.SetActive (false);
+		}
 		if (main_cam.enabled) 
 		{
 			main_cam.enabled = false;
@@ -356,6 +350,8 @@ public class Peli : MonoBehaviour {
 	}
 
 	public void restart() {
+		die = false;
+		Audio.Stop ();
 		deathScreen.gameObject.SetActive (false);
 		Laskin = 0;
 		suorita = false;
@@ -364,9 +360,13 @@ public class Peli : MonoBehaviour {
 		kameranVaihto();
 		pelaaja.transform.rotation = originalRotation;
 		pelaaja.transform.position = originalPosition;
+		pelaaja.GetComponentInChildren<Camera> ().transform.rotation = orgCam;
+		Audio.Play ();
 	}
 
 	public void Die() {
+		Audio.PlayOneShot (lose, 0.8f);
+		deathScreen.gameObject.SetActive (true);
 		if (!mapLoader.playingAgain) {
 			deaths++;
 		}
@@ -380,7 +380,6 @@ public class Peli : MonoBehaviour {
 		askeleet = 0;
 		Kaanny = false;
 		die = true;
-		die_z = Random.Range (0, 2) == 0 ? -90 : 90;
 	}
 		
 	public void win() {
@@ -391,11 +390,11 @@ public class Peli : MonoBehaviour {
 		suorita = false;
 
 		if (mapLoader.mapNum == 1) {
-			Audio.PlayOneShot (vic1, 0.9f);
+			Audio.PlayOneShot (vic1, 1f);
 		} else if (mapLoader.mapNum == 2) {
-			Audio.PlayOneShot (vic2, 0.8f);
+			Audio.PlayOneShot (vic2, 0.9f);
 		} else {
-			Audio.PlayOneShot (vic3, 0.7f);
+			Audio.PlayOneShot (vic3, 0.8f);
 		}
 		winScreen.SetActive (true);
 	}
