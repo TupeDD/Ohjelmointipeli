@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 
 public class scoreToDB : MonoBehaviour {
 
@@ -14,13 +15,22 @@ public class scoreToDB : MonoBehaviour {
 	IEnumerator Start () {
 		inputField = GameObject.FindGameObjectWithTag ("input");
 
-		pisteet = SceneController.pisteet;
+		pisteet = Loppu.pisteet;
 		nimi = inputField.GetComponent<Text>().text;
+
 		if (nimi.Length > 0) {
-			WWW itemData = new WWW ("http://localhost/Unity(ohjelmointipeli)/index.php?security=NeverGonnaLetYouDownXD&function=postData&nimi=" + nimi + "&pisteet=" + pisteet);
+			// Nimen puhdistus
+			string pattern = @"[^a-zA-Z0-9 ]";
+			string replacement = "";
+			Regex rgx = new Regex (pattern);
+			nimi = rgx.Replace (nimi, replacement);
+			mapLoader.nimi = nimi;
+			PlayerPrefs.SetString ("Pelaaja",nimi);
+
+			WWW itemData = new WWW ("http://paja.esedu.fi/data14/tuomas.kiviranta/Ohjelmointipeli(Tietokanta)/index.php?security=NeverGonnaLetYouDownXD&function=postData&nimi=" + nimi + "&pisteet=" + pisteet);
 			yield return itemData;
 		} else {
-			WWW itemData = new WWW ("http://localhost/Unity(ohjelmointipeli)/index.php?security=NeverGonnaLetYouDownXD&function=postData&pisteet="+pisteet);
+			WWW itemData = new WWW ("http://paja.esedu.fi/data14/tuomas.kiviranta/Ohjelmointipeli(Tietokanta)/index.php?security=NeverGonnaLetYouDownXD&function=postData&pisteet="+pisteet);
 			yield return itemData;
 		}
 

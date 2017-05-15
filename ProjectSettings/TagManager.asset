@@ -22,6 +22,8 @@ TagManager:
   - map3
   - cannon
   - border
+  - Interact
+  - Cannon_Ball
   layers:
   - Default
   - TransparentFX

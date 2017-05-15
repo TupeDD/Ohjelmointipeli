@@ -93,6 +93,7 @@
      <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
      <Compile Include="Assets\Frost\FrostEffect.cs" />
+     <Compile Include="Assets\Loppu.cs" />
      <Compile Include="Assets\Nature Pack\Standard Assets\Utility\CurveControlledBob.cs" />
      <Compile Include="Assets\Nature Pack\Standard Assets\Utility\FOVKick.cs" />
      <Compile Include="Assets\Nature Pack\Standard Assets\Utility\LerpControlledBob.cs" />

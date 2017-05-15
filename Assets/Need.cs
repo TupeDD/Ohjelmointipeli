@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Need : MonoBehaviour {
 
@@ -15,6 +16,10 @@ public class Need : MonoBehaviour {
 	}
 
 	public void run() {
-		gameObject.AddComponent<scoreToDB>();
+		if (!mapLoader.playingAgain) {
+			gameObject.AddComponent<scoreToDB> ();
+		} else {
+			SceneManager.LoadScene ("Alkusivu");
+		}
 	}
 }

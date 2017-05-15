@@ -21,7 +21,6 @@ public class explosion : MonoBehaviour {
 
 	public void explode() {
 		int randomExplode = Random.Range(1, 4);
-		print (randomExplode);
 		if (randomExplode == 3) {
 			EXPLODE = true;
 			Invoke ("reset", 1f);

@@ -1,16 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Peli.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scoreToDB.cs">
     <Files>
-      <File FileName="Assets\SceneController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Peli.cs" Line="376" Column="38" />
-      <File FileName="Assets\Database.cs" Line="1" Column="1" />
-      <File FileName="Assets\scoreToDB.cs" Line="1" Column="1" />
-      <File FileName="Assets\Need.cs" Line="1" Column="1" />
+      <File FileName="Assets\SceneController.cs" Line="92" Column="56" />
+      <File FileName="Assets\Peli.cs" Line="468" Column="4" />
+      <File FileName="Assets\Database.cs" Line="35" Column="1" />
+      <File FileName="Assets\scoreToDB.cs" Line="28" Column="43" />
+      <File FileName="Assets\Need.cs" Line="21" Column="11" />
       <File FileName="Assets\dragDrop.cs" Line="1" Column="1" />
       <File FileName="Assets\Slot.cs" Line="1" Column="1" />
-      <File FileName="Assets\mapLoader.cs" Line="1" Column="1" />
-      <File FileName="Assets\explosion.cs" Line="1" Column="1" />
+      <File FileName="Assets\mapLoader.cs" Line="24" Column="1" />
+      <File FileName="Assets\explosion.cs" Line="23" Column="42" />
+      <File FileName="Assets\Loppu.cs" Line="8" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

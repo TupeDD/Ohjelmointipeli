@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class Peli : MonoBehaviour {
 
 	// Liiku paneelin askeleet ja suunta
-	public static GameObject liiku_maara;
-	public static GameObject suuntaText;
+	public GameObject liiku_maara;
+	public GameObject suuntaText;
 
 	// Kamerat ja Canvasit
 	public Camera fps_cam;
@@ -23,9 +23,9 @@ public class Peli : MonoBehaviour {
 
 	// Pisteet
 	public static int coins = 0;
-	public static int deaths = 0;
-	public static int rounds = 0;
-	public static int roundActions = 0;
+	public static int deaths;
+	public static int rounds;
+	public static int roundActions;
 	public int coinsToWin = 4;
 
 	// Unityn FirstPersonController scripti pelaajassa
@@ -83,13 +83,11 @@ public class Peli : MonoBehaviour {
 
 	public GameObject deathScreen;
 	public GameObject winScreen;
+	public GameObject infoScreen;
+	public GameObject infoText;
 
 	// Use this for initialization
 	void Start () {
-		liiku_maara = GameObject.FindGameObjectWithTag ("Askeleet");
-		suuntaText = GameObject.FindGameObjectWithTag ("suuntaText");
-		//liiku (5);
-		//kaanny("oikea");
 		Audio = GetComponent<AudioSource>();
 		coinsToWin = GameObject.FindGameObjectsWithTag ("Coin").Length;
 		TOIMINTA = new List<string> ();
@@ -98,6 +96,17 @@ public class Peli : MonoBehaviour {
 		originalRotation = pelaaja.transform.rotation;
 		freezeOn = GetComponentInChildren<FrostEffect> ().enabled;
 		coins = 0;
+		string info = "";
+		if (mapLoader.mapNum == 1) {
+			info = "Tehtävänä on kerätä kaikki kolikot mahdollisimman vähillä kierroksilla ja varoa vaarallisia luonnon ilmiöitä";
+			infoText.GetComponent<Text> ().text = info;
+		} else if (mapLoader.mapNum == 2) {
+			info = "Talvella on kylmä ja kylmyyttä ehkäiset nuotion seurassa";
+			infoText.GetComponent<Text> ().text = info;
+		} else {
+			info = "Ritarit ovat ladanneet tykkeja sotaa varten ja ne voivat laueta itsestään jos menet niiden eteen";
+			infoText.GetComponent<Text> ().text = info;
+		}
 	}
 	
 	// Update is called once per frame
@@ -226,21 +235,23 @@ public class Peli : MonoBehaviour {
 		}
 		if (die) {
 			if (die_z > 0) {
-				if (Mathf.Round(pelaaja.transform.localEulerAngles.z) >= die_z) {
+				if (pelaaja.transform.localEulerAngles.z >= die_z) {
 					die = false;
 					deathScreen.gameObject.SetActive (true);
 				} 
 				else {
-					pelaaja.transform.Rotate (0, 0, 1f);
+					print (pelaaja.transform.localEulerAngles.z);
+					pelaaja.transform.Rotate (0, 0, 0.5f);
 				} 
 			} 
 			else {
-				if (Mathf.Round(pelaaja.transform.localEulerAngles.z) <= die_z) {
+				if (pelaaja.transform.localEulerAngles.z <= die_z) {
 					die = false;
 					deathScreen.gameObject.SetActive (true);
 				} 
 				else {
-					pelaaja.transform.Rotate (0, 0, -1f);
+					print (pelaaja.transform.localEulerAngles.z);
+					pelaaja.transform.Rotate (0, 0, -0.5f);
 				} 
 			}
 		}
@@ -264,7 +275,9 @@ public class Peli : MonoBehaviour {
 	}
 
 	public void liiku(int montako) {
-		roundActions++;
+		if (!mapLoader.playingAgain) {
+			roundActions++;
+		}
 		Liiku = true;
 		askeleet = montako*4;
 		x = pelaaja.transform.position.x;
@@ -300,7 +313,9 @@ public class Peli : MonoBehaviour {
 	}
 
 	public void kaanny(string Suunta) {
-		roundActions++;
+		if (!mapLoader.playingAgain) {
+			roundActions++;
+		}
 		temp_rot += 90f;
 		Kaanny = true;
 		ksuunta = Suunta;
@@ -352,6 +367,9 @@ public class Peli : MonoBehaviour {
 	}
 
 	public void Die() {
+		if (!mapLoader.playingAgain) {
+			deaths++;
+		}
 		TOIMINTA.Clear ();
 		TOIMINTA2.Clear ();
 		fps.Vertical = 0;
@@ -366,15 +384,16 @@ public class Peli : MonoBehaviour {
 	}
 		
 	public void win() {
+		coins = 0;
 		TOIMINTA.Clear ();
 		TOIMINTA2.Clear ();
 		fps.Vertical = 0;
 		suorita = false;
 
 		if (mapLoader.mapNum == 1) {
-			Audio.PlayOneShot (vic1, 0.7f);
+			Audio.PlayOneShot (vic1, 0.9f);
 		} else if (mapLoader.mapNum == 2) {
-			Audio.PlayOneShot (vic2, 0.7f);
+			Audio.PlayOneShot (vic2, 0.8f);
 		} else {
 			Audio.PlayOneShot (vic3, 0.7f);
 		}
@@ -395,6 +414,10 @@ public class Peli : MonoBehaviour {
 		}
 		mapLoader.mapWon();
 		SceneManager.LoadScene(scene);
+	}
+
+	public void infoSulje() {
+		infoScreen.SetActive (false);
 	}
 
 	void OnCollisionEnter(Collision col) {
@@ -427,17 +450,17 @@ public class Peli : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col) {
-		if (col.gameObject.tag == "Coin") {
+		if (col.gameObject.tag == "Coin" && suorita && Liiku) {
 			Destroy (col.gameObject);
 			Audio.PlayOneShot (collect, 0.7f);
-			coins++;
-			//coins+=4;
+			coins = 4;
+			//coins++;
 			if (coins == coinsToWin) {
 				win ();
 			}
 		}
 		if (col.gameObject.tag == "Lava") {
-			Audio.PlayOneShot (burn, 0.7f);
+			Audio.PlayOneShot (burn, 0.5f);
 			Die ();
 		}
 		if (col.gameObject.tag == "Fire") {
@@ -445,6 +468,7 @@ public class Peli : MonoBehaviour {
 		}
 		if (col.gameObject.tag == "cannon") {
 			col.gameObject.transform.parent.gameObject.transform.Find("cannon ball pref").gameObject.SetActive(true);
+			col.gameObject.transform.parent.gameObject.transform.GetChild (6).gameObject.SetActive (true);
 			col.gameObject.transform.parent.gameObject.transform.Find("cannon ball pref").gameObject.GetComponent<explosion>().explode();
 			if (explosion.EXPLODE) {
 				Die ();

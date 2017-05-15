@@ -12,6 +12,8 @@ public class mapLoader : MonoBehaviour {
 	public static int mapNum;
 	public static int mapsWon;
 	private bool reload = false;
+	public static bool playingAgain = false;
+	public static string nimi = "";
 
 	public void Awake()
 	{
@@ -36,9 +38,16 @@ public class mapLoader : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (SceneManager.GetActiveScene().name == "Alkusivu") {
-			Map1 = GameObject.FindGameObjectWithTag ("map1");
-			Map2 = GameObject.FindGameObjectWithTag ("map2");
-			Map3 = GameObject.FindGameObjectWithTag ("map3");
+			if (Map1 == null) {
+				Map1 = GameObject.FindGameObjectWithTag ("map1");
+			}
+			if (Map2 == null) {
+				Map2 = GameObject.FindGameObjectWithTag ("map2");
+			}
+			if (Map3 == null) {
+				Map3 = GameObject.FindGameObjectWithTag ("map3");
+			}
+
 			if (mapsWon == 0) {
 				Map1.GetComponent<Button> ().interactable = true;
 			} else if (mapsWon == 1) {
@@ -71,14 +80,29 @@ public class mapLoader : MonoBehaviour {
 		}
 	}
 	public void map1() {
+		if (mapsWon >= 1) {
+			playingAgain = true;
+		} else {
+			playingAgain = false;
+		}
 		mapNum = 1;
 		SceneManager.LoadScene ("Peli");
 	}
 	public void map2() {
+		if (mapsWon >= 2) {
+			playingAgain = true;
+		} else {
+			playingAgain = false;
+		}
 		mapNum = 2;
 		SceneManager.LoadScene ("Peli");
 	}
 	public void map3() {
+		if (mapsWon == 3) {
+			playingAgain = true;
+		} else {
+			playingAgain = false;
+		}
 		mapNum = 3;
 		SceneManager.LoadScene ("Peli");
 	}

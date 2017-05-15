@@ -56,7 +56,6 @@ public class SceneController : MonoBehaviour {
 				map1.SetActive (false);
 				map2.SetActive (true);
 				map3.SetActive (false);
-				print (map2.activeSelf);
 			} else if (mapNum == 3) {
 				FPS.GetComponentInChildren<FrostEffect> ().enabled = false;
 				GetComponent<Light> ().intensity = 1.25f;
@@ -86,10 +85,6 @@ public class SceneController : MonoBehaviour {
 			
 		}
 		else if (skene == "Loppu") {
-			rounds = Peli.rounds;
-			deaths = Peli.deaths;
-			roundActions = Peli.roundActions;
-			pisteet = 1 - (deaths + rounds);
 		}
 		if (buttonActive && !Peli.suorita && komentoAlue.transform.childCount > 0) {
 			button.GetComponent<Button> ().interactable = true;
@@ -130,7 +125,9 @@ public class SceneController : MonoBehaviour {
 
 	public void Aloita() {
 		buttonActive = false;
-		Peli.rounds++;
+		if (!mapLoader.playingAgain) {
+			Peli.rounds++;
+		}
 	}
 
 	public void delayAloita() {
