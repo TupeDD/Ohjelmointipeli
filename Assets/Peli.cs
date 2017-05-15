@@ -22,7 +22,7 @@ public class Peli : MonoBehaviour {
 	public GameObject pelaaja;
 
 	// Pisteet
-	public static int coins = 0;
+	public int coins = 0;
 	public static int deaths;
 	public static int rounds;
 	public static int roundActions;
@@ -57,6 +57,7 @@ public class Peli : MonoBehaviour {
 	public int suuntaNumero = 0;
 	public static bool suorita = false;
 	public bool die = false;
+	private double die_z;
 
 	public GameObject dirLight;
 	public GameObject Coin;
@@ -89,6 +90,7 @@ public class Peli : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		coins = 0;
 		Audio = GetComponent<AudioSource>();
 		coinsToWin = GameObject.FindGameObjectsWithTag ("Coin").Length;
 		TOIMINTA = new List<string> ();
@@ -118,15 +120,17 @@ public class Peli : MonoBehaviour {
 
 		// Jäätyminen
 		if (freezeOn && mapLoader.mapNum == 2) {
-			if (freeze >= 0.6f) {
+			if (freeze >= 0.55f) {
 				Die ();
+				freeze = 0f;
 			}
 			if (closeToFire) {
 				if (freeze > 0) {
 					freeze -= 0.001f;
 				}
-			} else if (suorita) {
-				if (freeze < 0.6f) {
+			} 
+			else if (suorita) {
+				if (freeze < 0.55f) {
 					freeze += 0.0001f;
 				}
 			}
@@ -213,8 +217,8 @@ public class Peli : MonoBehaviour {
 							TOIMINTA2.Clear ();
 						}
 					} else {
-						temp_rot -= 0.5f;
-						pelaaja.transform.Rotate (0, -0.5f, 0);
+						temp_rot -= 0.25f;
+						pelaaja.transform.Rotate (0, -0.25f, 0);
 					}	
 				} else if (ksuunta == "oikea") {
 					if (temp_rot == 0) {
@@ -235,14 +239,13 @@ public class Peli : MonoBehaviour {
 				endRound ();
 			}
 		}
+
 		if (die) {
-			double c = -90.0 / -0.05;
-			double cc = 0.0;
-			if (cc == c) {
+			if (die_z == 0) {
 				die = false;
 			} 
 			else {
-				cc++;
+				die_z--;
 				pelaaja.GetComponentInChildren<Camera> ().transform.Rotate (0, 0, -0.025f);
 			} 
 		}
@@ -351,7 +354,7 @@ public class Peli : MonoBehaviour {
 
 	public void restart() {
 		die = false;
-		Audio.Stop ();
+		Audio.Stop();
 		deathScreen.gameObject.SetActive (false);
 		Laskin = 0;
 		suorita = false;
@@ -361,7 +364,7 @@ public class Peli : MonoBehaviour {
 		pelaaja.transform.rotation = originalRotation;
 		pelaaja.transform.position = originalPosition;
 		pelaaja.GetComponentInChildren<Camera> ().transform.rotation = orgCam;
-		Audio.Play ();
+		Audio.Play();
 	}
 
 	public void Die() {
@@ -379,22 +382,22 @@ public class Peli : MonoBehaviour {
 		Liiku = false;
 		askeleet = 0;
 		Kaanny = false;
+		die_z = 90 / 0.025;
 		die = true;
 	}
 		
 	public void win() {
-		coins = 0;
 		TOIMINTA.Clear ();
 		TOIMINTA2.Clear ();
 		fps.Vertical = 0;
 		suorita = false;
 
 		if (mapLoader.mapNum == 1) {
-			Audio.PlayOneShot (vic1, 1f);
+			Audio.PlayOneShot (vic1, 1.2f);
 		} else if (mapLoader.mapNum == 2) {
-			Audio.PlayOneShot (vic2, 0.9f);
+			Audio.PlayOneShot (vic2, 1f);
 		} else {
-			Audio.PlayOneShot (vic3, 0.8f);
+			Audio.PlayOneShot (vic3, 0.9f);
 		}
 		winScreen.SetActive (true);
 	}
@@ -452,9 +455,8 @@ public class Peli : MonoBehaviour {
 		if (col.gameObject.tag == "Coin" && suorita && Liiku) {
 			Destroy (col.gameObject);
 			Audio.PlayOneShot (collect, 0.7f);
-			coins = 4;
-			//coins++;
-			if (coins == coinsToWin) {
+			coins++;
+			if (coins >= coinsToWin) {
 				win ();
 			}
 		}

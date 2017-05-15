@@ -793,8 +793,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 99, y: -4}
-  m_SizeDelta: {x: 109, y: 95}
+  m_AnchoredPosition: {x: 95.1, y: -4}
+  m_SizeDelta: {x: 101.2, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74472444
 MonoBehaviour:
@@ -817,7 +817,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: cd25d80d03a864fdd90534b28f15208a, type: 3}
-    m_FontSize: 75
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1627,6 +1627,10 @@ Prefab:
     - target: {fileID: 18313588, guid: 933dc00178582c3469a7ade58d1e8ef0, type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 150460, guid: 933dc00178582c3469a7ade58d1e8ef0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 933dc00178582c3469a7ade58d1e8ef0, type: 2}
@@ -9454,6 +9458,10 @@ Prefab:
     - target: {fileID: 9500000, guid: ef3eef1329900b242b41afa14c5ceaf1, type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ef3eef1329900b242b41afa14c5ceaf1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef3eef1329900b242b41afa14c5ceaf1, type: 2}
@@ -19228,6 +19236,14 @@ Prefab:
       propertyPath: m_RunstepLenghten
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_IsWalking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_LandSound
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -23437,6 +23453,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 161828, guid: 50c5b18209503ac4caa38c7d9cbf10ab, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c5b18209503ac4caa38c7d9cbf10ab, type: 2}
   m_IsPrefabParent: 0
@@ -24069,6 +24089,7 @@ MonoBehaviour:
   mainCanvas: {fileID: 2105178976}
   fpsCanvas: {fileID: 1025584802}
   pelaaja: {fileID: 1055300196}
+  coins: 0
   coinsToWin: 0
   fps: {fileID: 1055300199}
   x: 0
@@ -24105,87 +24126,6 @@ MonoBehaviour:
   winScreen: {fileID: 31600015}
   infoScreen: {fileID: 1322109669}
   infoText: {fileID: 1445932449}
---- !u!82 &1055300204
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1055300196}
-  m_Enabled: 0
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 2b236008dcbd0c74a9eeee9be298479b,
-    type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!81 &1055300205
 AudioListener:
   m_ObjectHideFlags: 0
@@ -24249,7 +24189,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: cd25d80d03a864fdd90534b28f15208a, type: 3}
-    m_FontSize: 75
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -45420,6 +45360,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 150460, guid: 933dc00178582c3469a7ade58d1e8ef0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 933dc00178582c3469a7ade58d1e8ef0, type: 2}
   m_IsPrefabParent: 0
@@ -45842,12 +45786,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 2b45ab38ac80dc548813dd73873489da, type: 3}
-    m_FontSize: 40
+    m_Font: {fileID: 12800000, guid: c93307c6fb81f4048a9d4661d7ebde35, type: 3}
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -45855,7 +45799,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Teht\xE4v\xE4n\xE4 on ker\xE4t\xE4 kaikki kolikot mahdollisimman v\xE4hill\xE4
-    toiminnoilla ja varoa vaarallisia luonnon ansoja"
+    toiminnoilla ja varoa vaarallisia luonnon ilmi\xF6it\xE4"
 --- !u!222 &1445932451
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45877,8 +45821,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 28}
-  m_SizeDelta: {x: 504, y: 263}
+  m_AnchoredPosition: {x: 11, y: 32}
+  m_SizeDelta: {x: 749, y: 327}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1446480822
 GameObject:
@@ -61781,7 +61725,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17, y: 292}
+  m_AnchoredPosition: {x: 0, y: 291.5}
   m_SizeDelta: {x: 504, y: 192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989496677
@@ -63075,6 +63019,10 @@ Prefab:
     - target: {fileID: 9500000, guid: ef3eef1329900b242b41afa14c5ceaf1, type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ef3eef1329900b242b41afa14c5ceaf1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef3eef1329900b242b41afa14c5ceaf1, type: 2}

@@ -13,6 +13,7 @@ public class Seuraaja : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		y = gameObject.transform.position.y;
 		kohdista ();
 	}
 	
@@ -23,7 +24,7 @@ public class Seuraaja : MonoBehaviour {
 
 	public void kohdista() {
 		x = pelaaja.transform.position.x;
-		y = this.transform.position.y;
+		//y = this.transform.position.y;
 		z = pelaaja.transform.position.z;
 		loca = new Vector3 (x, y, z);
 		transform.position = loca;

@@ -24,6 +24,7 @@ TagManager:
   - border
   - Interact
   - Cannon_Ball
+  - cube
   layers:
   - Default
   - TransparentFX

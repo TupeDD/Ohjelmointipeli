@@ -20,14 +20,17 @@ public class Loppu : MonoBehaviour {
 		kierrokset = Peli.rounds;
 		liikkeet = Peli.roundActions;
 		/* 100 pistettä saa jos 
-		 Map 1. roundActions = 11
-		 Map 2. roundActions = 13
-		 Map 3. roundActions = 9
+		 Map 1. Rounds = 3 & roundActions = 11
+		 Map 2. Rounds = 3 & roundActions = 13
+		 Map 3. Rounds = 2 & roundActions = 9
 		*/
-		pisteet = 133 - liikkeet - (kuolemat * 5);
+		pisteet = 141 - liikkeet - kierrokset - (kuolemat * 10);
+		if (pisteet < 0) {
+			pisteet = 0;
+		}
 		kuolemat = Peli.deaths;
 
-		Kierrokset.GetComponent<Text> ().text = "Kierrokset yhteensä : " + kierrokset;
+		Kierrokset.GetComponent<Text> ().text = "Kierrokset : " + kierrokset;
 		Liikkeet.GetComponent<Text> ().text = "Liikkeet : " + liikkeet;
 		Pisteet.GetComponent<Text> ().text = "Pisteet : " + pisteet;
 		Kuolemat.GetComponent<Text> ().text = "Kuolemat : " + kuolemat;

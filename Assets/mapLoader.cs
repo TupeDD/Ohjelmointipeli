@@ -17,22 +17,22 @@ public class mapLoader : MonoBehaviour {
 
 	public void Awake()
 	{
-		DontDestroyOnLoad(this);
+		/*DontDestroyOnLoad(this);
 
 		if (FindObjectsOfType(GetType()).Length > 1)
 		{
 			Destroy(gameObject);
-		}
+		}*/
 	}
 
 	// Use this for initialization
 	void Start () {
-		Button m1 = Map1.GetComponent<Button> ();
+		/*Button m1 = Map1.GetComponent<Button> ();
 		m1.onClick.AddListener (map1);
 		Button m2 = Map2.GetComponent<Button> ();
 		m2.onClick.AddListener (map2);
 		Button m3 = Map3.GetComponent<Button> ();
-		m3.onClick.AddListener (map3);
+		m3.onClick.AddListener (map3);*/
 	}
 	
 	// Update is called once per frame
@@ -50,8 +50,9 @@ public class mapLoader : MonoBehaviour {
 
 			if (mapsWon == 0) {
 				Map1.GetComponent<Button> ().interactable = true;
-			} else if (mapsWon == 1) {
-				if (!reload) {
+			} 
+			else if (mapsWon == 1) {
+				/*if (!reload) {
 					Button m1 = Map1.GetComponent<Button> ();
 					m1.onClick.AddListener (map1);
 					Button m2 = Map2.GetComponent<Button> ();
@@ -59,11 +60,12 @@ public class mapLoader : MonoBehaviour {
 					Button m3 = Map3.GetComponent<Button> ();
 					m3.onClick.AddListener (map3);
 					reload = true;
-				}
+				}*/
 				Map1.GetComponent<Button> ().interactable = true;
 				Map2.GetComponent<Button> ().interactable = true;
-			} else {
-				reload = false;
+			} 
+			else {
+				/*reload = false;
 				if (!reload) {
 					Button m1 = Map1.GetComponent<Button> ();
 					m1.onClick.AddListener (map1);
@@ -72,7 +74,7 @@ public class mapLoader : MonoBehaviour {
 					Button m3 = Map3.GetComponent<Button> ();
 					m3.onClick.AddListener (map3);
 					reload = true;
-				}
+				}*/
 				Map1.GetComponent<Button> ().interactable = true;
 				Map2.GetComponent<Button> ().interactable = true;
 				Map3.GetComponent<Button> ().interactable = true;

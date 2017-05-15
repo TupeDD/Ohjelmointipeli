@@ -99,7 +99,7 @@ public class SceneController : MonoBehaviour {
 					if (komentoAlue.transform.GetChild(i).tag == "liiku") {
 						int askeleet = int.Parse(komentoAlue.transform.GetChild(i).transform.GetChild(0).FindChild("Askeleet").GetComponent<Text> ().text);
 						string komento = "liiku";
-						//this.gameObject.SendMessage(komento, askeleet);
+
 						Peli.TOIMINTA.Add(komento);
 						Peli.TOIMINTA2.Add(""+askeleet);
 
@@ -112,7 +112,6 @@ public class SceneController : MonoBehaviour {
 						} else {
 							suunta = "oikea";
 						}
-						//this.gameObject.SendMessage(komento, suunta);
 						Peli.TOIMINTA.Add(komento);
 						Peli.TOIMINTA2.Add(suunta);
 					}
@@ -136,7 +135,6 @@ public class SceneController : MonoBehaviour {
 	}
 
 	public void emptyToiminnot() {
-		//FPS.SendMessage ("kameranVaihto");
 		for(int i = 0; i < komentoAlue.transform.childCount; i++) {
 			Destroy (komentoAlue.transform.GetChild(i).gameObject);
 		}
