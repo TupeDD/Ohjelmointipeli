@@ -43,7 +43,6 @@ public class explosion : MonoBehaviour {
 	public void disable() {
 		EXPLODE = false;
 		explosionEffect.SetActive (false);
-		//gameObject.transform.parent.gameObject.transform.Find ("SmallExplosionEffect").gameObject.SetActive (false);
 		gameObject.SetActive (false);
 	}
 

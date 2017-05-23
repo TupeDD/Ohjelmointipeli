@@ -44,7 +44,6 @@ public class dragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public void OnEndDrag (PointerEventData eventData)
 	{
 		liikuttamassa = false;
-		//GetComponent<CanvasGroup> ().blocksRaycasts = true;
 		if (!Slot.sainToiminnan || Slot.toiminnot > 5) {
 			Destroy (liiku);
 			if (!isClone) {

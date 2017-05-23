@@ -25,6 +25,7 @@ TagManager:
   - Interact
   - Cannon_Ball
   - cube
+  - test
   layers:
   - Default
   - TransparentFX

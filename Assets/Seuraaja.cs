@@ -24,7 +24,6 @@ public class Seuraaja : MonoBehaviour {
 
 	public void kohdista() {
 		x = pelaaja.transform.position.x;
-		//y = this.transform.position.y;
 		z = pelaaja.transform.position.z;
 		loca = new Vector3 (x, y, z);
 		transform.position = loca;

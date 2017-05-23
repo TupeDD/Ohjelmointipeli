@@ -7,31 +7,46 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/SampleScenes/Scenes/2dCharacter.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/SampleScenes/Scenes/AircraftJet2Axis.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/SampleScenes/Scenes/AircraftJetAI.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/SampleScenes/Scenes/AircraftPropeller4Axis.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/SampleScenes/Scenes/AircraftPropellerAI.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/SampleScenes/Scenes/Car.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/SampleScenes/Scenes/CarAIWaypointBased.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/SampleScenes/Scenes/CharacterFirstPerson.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/SampleScenes/Scenes/CharacterThirdPerson.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/SampleScenes/Scenes/CharacterThirdPersonAI.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/SampleScenes/Scenes/Particles.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/SampleScenes/Scenes/RollerBall.unity
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Alkusivu.unity
+    guid: bd39d4f0e2600a643a0e9e443a50010b
   - enabled: 1
     path: Assets/Peli.unity
+    guid: 50dca4b35d16d06408156121452e53cb
   - enabled: 1
     path: Assets/Loppu.unity
+    guid: 76c3b7355324ce345a03e51c250b59d6

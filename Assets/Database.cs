@@ -23,6 +23,7 @@ public class Database : MonoBehaviour {
 		string itemDataString = itemData.text;
 
 		items = itemDataString.Split (';');
+
 		string color = "";
 		string colorEnd = "";
 		foreach (string item in items) {

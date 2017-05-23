@@ -42,7 +42,7 @@ public class SceneController : MonoBehaviour {
 			mapNum = mapLoader.mapNum;
 			if (mapNum == 1) {
 				FPS.GetComponentInChildren<FrostEffect> ().enabled = false;
-				GetComponent<Light> ().intensity = 1.25f;
+				GetComponent<Light> ().intensity = 1.5f;
 				RenderSettings.skybox = sky1;
 				RenderSettings.ambientIntensity = 2.27f;
 				map1.SetActive (true);
@@ -50,7 +50,7 @@ public class SceneController : MonoBehaviour {
 				map3.SetActive (false);
 			} else if (mapNum == 2) {
 				FPS.GetComponentInChildren<FrostEffect> ().enabled = true;
-				GetComponent<Light> ().intensity = 0.1f;
+				GetComponent<Light> ().intensity = 0.05f;
 				RenderSettings.skybox = sky2;
 				RenderSettings.ambientIntensity = 0;
 				map1.SetActive (false);
@@ -58,7 +58,7 @@ public class SceneController : MonoBehaviour {
 				map3.SetActive (false);
 			} else if (mapNum == 3) {
 				FPS.GetComponentInChildren<FrostEffect> ().enabled = false;
-				GetComponent<Light> ().intensity = 1.25f;
+				GetComponent<Light> ().intensity = 1.5f;
 				RenderSettings.skybox = sky3;
 				RenderSettings.ambientIntensity = 2.27f;
 				map1.SetActive (false);
